@@ -68,7 +68,47 @@ function createEventCard(eventDetails){
     event_element.classList = "event border rounded-3 p-2 m-1";
     event_element.eventData = eventDetails;
     let info = document.createElement("div");
-    info.innerHTML = 
+    if(eventDetails.location == null){
+        info.innerHTML = 
+        `<strong>
+            Event Name: 
+        </strong>
+        <br>
+        ${eventDetails.name}
+        <br>
+        <strong>
+            Event Time: 
+        </strong>
+        <br>
+        ${eventDetails.time}
+        <br>
+        <strong>
+            Category: 
+        </strong>
+        <br>
+        ${eventDetails.category}
+        <br>
+        <strong>
+            Event Modality: 
+        </strong>
+        <br>
+            ${eventDetails.modality}
+        <br>
+        <strong>
+            Event Url: 
+        </strong>
+        <br>
+            ${eventDetails.url}
+        <br>
+        <strong>
+            Attendees: 
+        </strong>
+        <br>
+            ${eventDetails.attendees}
+        <br>`;
+
+    } else {
+        info.innerHTML = 
         `<strong>
             Event Name: 
         </strong>
@@ -105,6 +145,8 @@ function createEventCard(eventDetails){
         <br>
             ${eventDetails.attendees}
         <br>`;
+
+    }
 
     if(eventDetails.category == "Academic"){
         event_element.style.backgroundColor = "lightcoral"
