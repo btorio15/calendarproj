@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    padding-top: 2%;
+}
+body {
+    height: 100%;
+    background-color: #f2f2f2;
+  }
+  .hidden {
+    visibility: hidden;
+    height: 0;
+  }
+  
+  #calendar {
+    height: 100vh !important;
+  }
+
+.custom-container {
+    width: 100%;
+    padding: 20%;
+}
+.event {
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
