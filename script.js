@@ -225,12 +225,16 @@ function validationCheck() {
     }
     if (modality === "remote") {
         const remote = document.getElementById("event_remote_url");
-        if (!remote.value) {
+    
+        // same regex as your HTML pattern
+        const urlRegex = /^https?:\/\/(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}.*$/;
+    
+        if (!remote.value || !urlRegex.test(remote.value)) {
             remote.classList.add("is-invalid");
             valid = false;
         } else {
             remote.classList.remove("is-invalid");
         }
-    }
+    }    
     return valid;
 }
